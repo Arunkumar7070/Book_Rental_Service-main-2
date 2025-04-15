@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental List</title>
+</head>
+<body>
+    <h2>Your Rentals - {{ user_name }}</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Book ID</th>
+            <th>Rental Date</th>
+            <th>Return Date</th>
+        </tr>
+        {% for rental in rentals %}
+        <tr>
+            <td>{{ rental[0] }}</td>
+            <td>{{ rental[2] }}</td>
+            <td>{{ rental[3] }}</td>
+            <td>{{ rental[4] or 'Not Returned' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">Rent another book</a></p>
+    <p><a href="http://localhost:5001">Go to Books</a> | <a href="http://localhost:5505/dashboard">Back to Dashboard</a></p>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9303187c2d39b0be',t:'MTc0NDYzMjU8MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
